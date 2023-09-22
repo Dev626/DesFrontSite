@@ -1,0 +1,98 @@
+<footer class="footer footer-2">
+    <div class="container">
+        <hr class="mb-0 mt-0">
+    </div>
+    <div class="footer-middle border-0">
+        <div [ngClass]="containerClass">
+            <div class="row">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="widget widget-about">
+                        <img src="{{ empresa_info.empresa_logo_url }}" class="footer-logo" alt="Footer Logo" width="105"
+                            height="27">
+                        <p>{{ empresa_info.descripcion_breve }}</p>
+
+                        <div class="widget-about-info">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <span class="widget-about-title">Soporte 24/7</span>
+                                    <a href="tel:+51{{ empresa_info.telefono }}" target="_blank">+51{{ empresa_info.telefono }}</a>
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <span class="widget-about-title">Payment Method</span>
+                                    <figure class="footer-payments">
+                                        <img src="assets/images/payments.png" alt="Payment methods" width="272"
+                                            height="20" />
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-2">
+                    <div class="widget">
+                        <h4 class="widget-title">Information</h4>
+
+                        <ul class="widget-list">
+                            <!-- <li><a routerLink="pages/about">About Molla</a></li> -->
+                            <!-- <li><a href="javascript:;">How to shop on Molla</a></li> -->
+                            <li><a routerLink="pages/faq">FAQ</a></li>
+                            <li><a routerLink="pages/contact">Contact us</a></li>
+                            <li><a routerLink="pages/login">Log in</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-2">
+                    <div class="widget">
+                        <h4 class="widget-title">Customer Service</h4>
+
+                        <ul class="widget-list">
+                            <li><a href="javascript:;">Payment Methods</a></li>
+                            <li><a href="javascript:;">Money-back guarantee!</a></li>
+                            <li><a href="javascript:;">Returns</a></li>
+                            <li><a href="javascript:;">Shipping</a></li>
+                            <li><a href="javascript:;">Terms and conditions</a></li>
+                            <li><a href="javascript:;">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-lg-2">
+                    <div class="widget">
+                        <h4 class="widget-title">My Account</h4>
+
+                        <ul class="widget-list">
+                            <li><a routerLink="/shop/dashboard">Sign In</a></li>
+                            <li><a routerLink="/shop/cart">View Cart</a></li>
+                            <!-- <li><a routerLink="/shop/wishlist">My Wishlist</a></li> -->
+                            <!-- <li><a href="javascript:;">Track My Order</a></li> -->
+                            <li><a href="javascript:;">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div [ngClass]="containerClass">
+            <p class="footer-copyright">Copyright © {{ year }} Ovenfo. All Rights Reserved.</p>
+            <ul class="footer-menu">
+                <li><a href="javascript:;">Terms Of Use</a></li>
+                <li><a href="javascript:;">Privacy Policy</a></li>
+            </ul>
+
+            <div class="social-icons social-icons-color">
+                <span class="social-label">Social Media</span>
+                <ng-template ngFor let-network [ngForOf]="social_network" let-i="index">
+                  <a href="{{ this.network.url }}" class="{{ this.network.variable_2.network_class }}" title="{{ this.network.descripcion }}" target="_blank">
+                    <i class="{{ this.network.variable_2.icon_class }}"></i>
+                  </a>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-10" *ngIf="isBottomSticky"></div>
+</footer>

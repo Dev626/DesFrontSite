@@ -1,0 +1,411 @@
+<main class="main home-page skeleton-body">
+  <div class="intro-slider-container">
+    <owl-carousel carouselClasses="owl-simple intro-slider" [hidden]="hiddenSlider" [options]="introSlider" [items]="banners">
+        <div *ngFor="let banner of banners" class="intro-slide"
+          style="background-image: url({{banner.image_bg}}); background-color: #EDF2F0;" >
+          <div class="container intro-content" contentAnim aniName="fadeInUpShorter">
+            <div class="row">
+              <div class="col-auto offset-lg-3 intro-col">
+                <h3 class="intro-subtitle">{{banner.subtitle}}</h3>
+                <h1 class="intro-title" [innerHtml]="banner.title"></h1>
+                <a href="{{banner.button_link}}" target="_blank" class="btn btn-outline-primary-2">
+                  <span>{{banner.button_text}}</span>
+                  <i class="icon-long-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+            <!--
+            <div class="intro-slide"
+                style="background-image: url(assets/images/home/sliders/slide-3.jpg); background-color: #EDF2F0;">
+                <div class="container intro-content" contentAnim aniName="fadeInUpShorter">
+                    <div class="row">
+                        <div class="col-auto offset-lg-3 intro-col">
+                            <h3 class="intro-subtitle">Fashion Promotions</h3>
+
+                            <h1 class="intro-title">
+                                Tan Suede
+                                <br />Biker Jacket
+                                <span>
+                                    <sup class="font-weight-light line-through">$240,00</sup>
+                                    <span class="text-primary">
+                                        $180
+                                        <sup>,99</sup>
+                                    </span>
+                                </span>
+                            </h1>
+                            <a routerLink="/shop/sidebar/list" class="btn btn-outline-primary-2">
+                                <span>Shop Now</span>
+                                <i class="icon-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+      </owl-carousel>
+  </div>
+
+    <!-- <div class="mb-4"></div>
+
+    <div class="container">
+        <h2 class="title text-center mb-2" contentAnim aniName="blurIn">Explore Popular Categories</h2>
+        <div class="cat-blocks-container">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'computers'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/1.jpg" alt="Category" width="131" height="117">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Computer & Laptop</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'cameras'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/2.jpg" alt="Category" width="111" height="106">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Digital Cameras</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'accessories'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/3.jpg" alt="Category" width="88" height="96">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Smart Phones</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'televisions'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/4.jpg" alt="Category" width="131" height="123">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Televisions</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'audio'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/5.jpg" alt="Category" width="102" height="102">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Audio</h3>
+                    </a>
+                </div>
+                <div class="col-6 col-sm-4 col-lg-2">
+                    <a routerLink="/shop/sidebar/3cols" [queryParams]="{category: 'watches'}" class="cat-block">
+                        <figure>
+                            <span>
+                                <img src="assets/images/home/cats/6.jpg" alt="Category" width="135" height="122">
+                            </span>
+                        </figure>
+                        <h3 class="cat-block-title">Smart Watches</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="mb-2"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 col-lg-3">
+                <div class="banner banner-1 banner-overlay" style="background-color: #ebebeb;" contentAnim
+                    aniName="fadeInLeft">
+                    <a routerLink="/shop/sidebar/3cols">
+                        <molla-image src="assets/images/home/banners/banner-1.jpg" alt="banner" width="277"
+                            height="260"></molla-image>
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle text-white">
+                            <a href="#">Weekend Sale</a>
+                        </h4>
+
+                        <h3 class="banner-title text-white">
+                            <a href="#">
+                                Lighting
+                                <br />& Accessories
+                                <br />
+                                <span>25% off</span>
+                            </a>
+                        </h3>
+
+                        <a routerLink="/shop/sidebar/3cols" class="banner-link">
+                            Shop Now
+                            <i class="icon-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 order-lg-last">
+                <div class="banner banner-3 banner-overlay" style="background-color: #465d55;" contentAnim
+                    aniName="fadeInRight">
+                    <a routerLink="/shop/sidebar/3cols">
+                        <molla-image src="assets/images/home/banners/banner-3.jpg" alt="banner" width="277"
+                            height="260"></molla-image>
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle text-white">
+                            <a href="#">Smart Offer</a>
+                        </h4>
+
+                        <h3 class="banner-title text-white">
+                            <a href="#">
+                                Anniversary
+                                <br />Special
+                                <br />
+                                <span>15% off</span>
+                            </a>
+                        </h3>
+
+                        <a routerLink="/shop/sidebar/list" class="banner-link">
+                            Shop Now
+                            <i class="icon-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner banner-2 banner-overlay" style="background-color: #d28679;" contentAnim
+                    aniName="fadeInUpShorter">
+                    <a routerLink="/shop/sidebar/3cols">
+                        <molla-image src="assets/images/home/banners/banner-2.jpg" alt="banner" width="576"
+                            height="260"></molla-image>
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle text-white d-none d-sm-block">
+                            <a href="#">Amazing Value</a>
+                        </h4>
+
+                        <h3 class="banner-title text-white">
+                            <a href="#">
+                                Clothes Trending
+                                <br />Spring Collection 2021
+                                <br />
+                                <span>from $12,99</span>
+                            </a>
+                        </h3>
+
+                        <a routerLink="/shop/sidebar/3cols" class="banner-link">
+                            Discover Now
+                            <i class="icon-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="mb-3"></div>
+
+    <div class="bg-light pt-3 pb-5">
+        <molla-deal-collection [products]="products.slice(0,10)" [loaded]="loaded">
+        </molla-deal-collection>
+    </div> -->
+
+    <div class="mb-3"></div>
+
+    <molla-electronics-collection [products]="products" [loaded]="loaded">
+    </molla-electronics-collection>
+
+    <!-- <div class="mb-3"></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="banner banner-4 banner-overlay banner-overlay-light" style="background-color: #ebebeb;">
+                    <a routerLink="/shop/sidebar/3cols">
+                        <img src="assets/images/home/banners/banner-4.jpg" alt="Banner" width="575" height="260">
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle">
+                            <a routerLink="/shop/sidebar/3cols">Spring Sale is Coming</a>
+                        </h4>
+
+                        <h3 class="banner-title">
+                            <a routerLink="/shop/sidebar/3cols">
+                                All Smart Watches
+                                <br />Discount
+                                <br />
+                                <span class="text-primary">15% off</span>
+                            </a>
+                        </h3>
+
+                        <a routerLink="/shop/sidebar/list" class="banner-link banner-link-dark">Discover Now<i
+                                class="icon-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner banner-5 banner-overlay" style="background-color: #808a95;">
+                    <a routerLink="/shop/sidebar/3cols">
+                        <img src="assets/images/home/banners/banner-5.png" alt="Banner" width="575" height="260">
+                    </a>
+                    <div class="banner-content">
+                        <h4 class="banner-subtitle text-white">
+                            <a routerLink="/shop/sidebar/4cols">Amazing Value</a>
+                        </h4>
+
+                        <h3 class="banner-title text-white">
+                            <a routerLink="/shop/sidebar/4cols">
+                                Headphones Trending
+                                <br />JBL Harman
+                                <br />
+                                <span>from $59,99</span>
+                            </a>
+                        </h3>
+
+                        <a routerLink="/shop/sidebar/list" class="banner-link">Discover Now<i
+                                class="icon-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="mb-1"></div>
+
+    <molla-furniture-collection [products]="products" [loaded]="loaded"></molla-furniture-collection>
+
+    <div class="mb-3"></div>
+
+    <molla-clothing-collection [products]="products" [loaded]="loaded"></molla-clothing-collection> -->
+
+    <!-- <div class="mb-3"></div>
+
+    <div class="container">
+        <h2 class="title title-border mb-3" contentAnim aniName="blurIn">Shop by Brands</h2>
+        <owl-carousel carouselClasses="brands-border owl-simple brand-slider mb-3" [options]="brandSlider">
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/1.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/2.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/3.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/4.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/5.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/6.png" alt="Brand Name">
+            </a>
+
+            <a href="javascript:;" class="brand">
+                <img src="assets/images/brands/7.png" alt="Brand Name">
+            </a>
+        </owl-carousel>
+    </div>
+
+    <div class="cta cta-horizontal cta-horizontal-box bg-primary">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-2xl-5col col-12" contentAnim aniName="fadeInLeftShorter">
+                    <h3 class="cta-title text-white">Join Our Newsletter</h3>
+
+                    <p class="cta-desc text-white">Subcribe to get information about products and coupons</p>
+                </div>
+
+                <div class="col-3xl-5col col-12" contentAnim aniName="fadeInRightShorter">
+                    <form action="#">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-white"
+                                placeholder="Enter your Email Address" aria-label="Email Adress" required />
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-white-2" type="submit">
+                                    <span>Subscribe</span>
+                                    <i class="icon-long-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <molla-blog-collection [posts]="posts" [loaded]="loaded"></molla-blog-collection>
+
+    <div class="icon-boxes-container bg-white">
+        <div class="container" contentAnim aniName="fadeInUpShorter">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-rocket"></i>
+                        </span>
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Free Shipping</h3>
+
+                            <p>Orders $50 or more</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-rotate-left"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Free Returns</h3>
+
+                            <p>Within 30 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-info-circle"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">Get 20% Off 1 Item</h3>
+
+                            <p>When you sign up</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon">
+                            <i class="icon-life-ring"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">We Support</h3>
+
+                            <p>24/7 amazing services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</main>

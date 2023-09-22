@@ -1,0 +1,30 @@
+<div class="dropdown compare-dropdown">
+    <a href="javascript:;" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" data-display="static" title="Compare Products" aria-label="Compare Products">
+        <i class="icon-random"></i>
+        <span class="compare-txt">Comparar</span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right" *ngIf="(compareService.compareQty | async) > 0 else elseBlock">
+        <ul class="compare-products">
+            <li class="compare-product" *ngFor="let product of (compareService.compareStream | async)">
+                <a href="javascript:;" class="btn-remove" title="Remove Product"
+                    (click)="removeFromCompare( $event, product )"><i class="icon-close"></i></a>
+                <h4 class="compare-product-title"><a
+                        [routerLink]="['/product/default/'+ product.id]">{{ product.name }}</a></h4>
+            </li>
+        </ul>
+
+        <div class="compare-actions">
+            <a href="javascript:;" class="action-link" (click)="clearAllCompare( $event )">Limpiar todo</a>
+            <a href="javascript:;" class="btn btn-outline-primary-2"><span>Comparar</span><i
+                    class="icon-long-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <ng-template #elseBlock>
+        <div class="dropdown-menu dropdown-menu-right">
+            <p class="text-center">No hay productos para comparación</p>
+        </div>
+    </ng-template>
+</div>
